@@ -1,0 +1,11 @@
+'atom-text-editor':
+  'cmd-up':'custom:smart-move-up'
+  'cmd-down':'custom:smart-move-down'
+  'cmd-left':'custom:smart-move-left'
+  'cmd-right':'custom:smart-move-right'
+
+'body':
+  'cmd-up':'custom:smart-move-up'
+  'cmd-down':'custom:smart-move-down'
+  'cmd-left':'custom:smart-move-left'
+  'cmd-right':'custom:smart-move-right'
