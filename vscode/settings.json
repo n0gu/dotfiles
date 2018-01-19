@@ -1,0 +1,30 @@
+{
+    "workbench.startupEditor": "none",
+    "window.zoomLevel": 1,
+    "terraform.path": "/usr/local/bin/terraform",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "python.linting.pep8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "editor.rulers": [
+        79
+    ],
+    "[markdown]": {
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": false
+    },
+    "editor.minimap.enabled": false,
+    "editor.scrollBeyondLastLine": false,
+    "extensions.ignoreRecommendations": false,
+    "python.linting.pep8Args": [
+        "--ignore=E501"
+    ],
+    "[vue]": {
+        "editor.tabSize": 2
+    },
+    "files.insertFinalNewline": true,
+    "[terraform]": {
+        "editor.formatOnSave": true
+    }
+}
