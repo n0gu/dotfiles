@@ -65,8 +65,7 @@ endfunction
 call s:download_vim_plug()
 
 " Colorscheme
-Plug 'yous/tomorrow-theme', { 'branch': 'revert-git-summary-bold',
-      \ 'rtp': 'vim' }
+Plug 'w0ng/vim-hybrid'
 
 " General
 if has('python')
@@ -278,7 +277,8 @@ set sidescrolloff=10
 set splitbelow
 set splitright
 set title
-colorscheme Tomorrow-Night-Eighties
+set background=dark
+colorscheme hybrid
 
 augroup colorcolumn
   autocmd!
@@ -683,6 +683,6 @@ let g:syntastic_cpp_compiler_options="-std=c++11 -stdlib=libc++"
 set mouse=a
 set ttymouse=xterm2
 
-cabbrev ㅂ q 
-cabbrev ㅈ w 
-cabbrev ㅈㅂ wq 
+cabbrev ㅂ q
+cabbrev ㅈ w
+cabbrev ㅈㅂ wq
