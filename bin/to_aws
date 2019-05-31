@@ -1,0 +1,18 @@
+#!/bin/bash
+
+EXITCODE=0
+
+if [[ -z $1 ]]; then
+    >&2 echo "Usage: to_aws PROFILE_NAME"
+    EXITCODE=1
+fi
+
+if [[ 0 -eq $(grep -c "\\[\\(profile \\)\\?$1\\]" ~/.aws/config) ]]; then
+    >&2 echo "Invalid profile $1"
+    EXITCODE=1
+fi
+
+if [[ $EXITCODE -eq 0 ]]; then
+    export AWS_PROFILE="$1"
+    echo "$AWS_PROFILE" > ~/.aws/current_profile
+fi

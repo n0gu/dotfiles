@@ -68,18 +68,10 @@ call s:download_vim_plug()
 Plug 'w0ng/vim-hybrid'
 
 " General
-if has('python')
-  redir => pyv
-  silent python import platform; print(platform.python_version())
-  redir END
-
-  " PreserveNoEOL requires Python 2.6
-  if s:version_requirement(
-        \ map(split(split(pyv)[0], '\.'), 'str2nr(v:val)'), [2, 6])
-    " Preserve missing EOL at the end of text files
-    Plug 'PreserveNoEOL'
-  endif
-endif
+" PreserveNoEOL
+Plug 'yous/PreserveNoEOL', {
+      \ 'commit': '9ef2f01',
+      \ 'frozen': 1 }
 " EditorConfig
 Plug 'editorconfig/editorconfig-vim'
 " Full path finder
@@ -89,7 +81,7 @@ Plug 'justinmk/vim-gtfo'
 " Much simpler way to use some motions
 Plug 'Lokaltog/vim-easymotion'
 " Extended % matching
-Plug 'matchit.zip'
+Plug 'tmhedberg/matchit'
 " Autocomplete if end
 Plug 'tpope/vim-endwise'
 " Easily delete, change and add surroundings in pairs
@@ -98,12 +90,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 " Vim sugar for the UNIX shell commands
 Plug 'tpope/vim-eunuch'
-" Produce increasing/decreasing columns of numbers, dates, or daynames
-Plug 'visincr'
 " Syntax checking plugin
 Plug 'scrooloose/syntastic'
-" Switch between source files and header files
-Plug 'a.vim'
 " Automated tag file generation and syntax highlighting of tags
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
@@ -122,8 +110,6 @@ Plug 'losingkeys/vim-niji'
 Plug 'bling/vim-airline'
 " Explore filesystem
 Plug 'scrooloose/nerdtree'
-" Source code browser
-Plug 'taglist.vim'
 " Show a git diff in the gutter and stages/reverts hunks
 Plug 'airblade/vim-gitgutter'
 
@@ -157,8 +143,6 @@ Plug 'tpope/vim-liquid'
 " Markdown
 Plug 'godlygeek/tabular', { 'for': 'mkd' }
 Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
-" PHP
-Plug 'php.vim-html-enhanced'
 " Racket
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 " XML
@@ -171,8 +155,10 @@ Plug 'tpope/vim-rake'
 Plug 'ngmy/vim-rubocop', { 'on': 'RuboCop' }
 " Rails
 Plug 'tpope/vim-rails'
-" ANSI escape
-Plug 'AnsiEsc.vim', { 'for': 'railslog' }
+if v:version >= 700
+  " ANSI escape sequences concealed, but highlighted as specified (conceal)
+  Plug 'powerman/vim-plugin-AnsiEsc', { 'for': 'railslog' }
+endif
 " TomDoc
 Plug 'wellbredgrapefruit/tomdoc.vim', { 'for': 'ruby' }
 
